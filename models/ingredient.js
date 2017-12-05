@@ -12,14 +12,14 @@ var IngredientSchema = Schema(
 		volume: {type: String, required: false},
 		techniques: {type: String, required: false},
 		tips: {type: String, required: false},
-		pairings: [{ ingredient: {type: String}, strength: {type: Number} }]
+		pairings: [{ name: String, strength: Number }]
 	}
 );
 
-// Virtual for book's URL
+// Virtual for ingredient's URL
 IngredientSchema.virtual('url')
 .get(function () {
-	return '/catalog/ingredient/' + this._id;
+	return '/catalog/ingredient/' + this.name;
 });
 
 // Export model

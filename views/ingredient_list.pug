@@ -1,13 +1,12 @@
 extends layout
 
 block content
-  h1= title
+  h1 Ingredient List
   
   ul
-  each book in book_list
+  each ingredient in ingredient_list
     li 
-      a(href=book.url) #{book.title} 
-      |  (#{book.author.name})
+      a(href=ingredient.url) #{ingredient.name} 
 
   else
-    li There are no books.
+    li There are no ingredients.

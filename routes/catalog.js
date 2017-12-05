@@ -9,17 +9,17 @@ var category_controller = require('../controllers/categoryController');
 /// INGREDIENT ROUTES ///
 
 /* GET catalog home page */
-router.get('/', ingredient.index);
+router.get('/', ingredient_controller.index);
 
 /* GET request for one Ingredient. */
-router.get('/ingredient/:id', ingredient.ingredient_detail);
+router.get('/ingredient/:name', ingredient_controller.ingredient_detail);
 
 /* GET request for list of all Ingredient items. */
-router.get('/ingredients', ingredient.ingredient_list);
+router.get('/ingredients', ingredient_controller.ingredient_list);
 
 /// CATEGORY ROUTES ///
 
 /* GET request for one Category. */
-router.get('/category/:id', category.category_detail);
+router.get('/category/:name', category_controller.category_detail);
 
 module.exports = router;
