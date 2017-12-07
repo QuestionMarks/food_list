@@ -27,14 +27,14 @@ block content
         else
           - let ingredient_url = '/catalog/ingredient/' + val.pairing;
           if val.strength
-            if val.strength = 2
+            if val.strength == 1
               a(href=ingredient_url)
-                - let pairingString = val.pairing.toUpperCase()
-                strong #{pairingString}
-              br
-            else if val.strength = 1
-              a(href=ingredient_url) 
                 strong #{val.pairing}
+              br
+            else if val.strength == 2
+              a(href=ingredient_url)
+                - let pairingString = val.pairing.toUpperCase() 
+                strong #{pairingString}
               br
           else
             a(href=ingredient_url) #{val.pairing}
