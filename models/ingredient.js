@@ -15,7 +15,8 @@ var IngredientSchema = Schema(
 		techniques: String,
 		tips: String,
 		pairings: [{ pairing: String, displayName: String, strength: Number, deadLink: Boolean }],
-		affinities: [String]
+		affinities: [String],
+		avoid: [String]
 	}
 );
 
