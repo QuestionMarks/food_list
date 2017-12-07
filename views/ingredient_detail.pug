@@ -16,6 +16,10 @@ block content
       each val in ingredient.techniques
         p #{val}
         |, 
+  if ingredient.affinities
+    p #[strong Affinities:]
+    each affinity in ingredient.affinities
+      p #{affinity}
   
   div(style='margin-left:20px;margin-top:20px')
     h4 Pairings
