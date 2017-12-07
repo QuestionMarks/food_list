@@ -9,6 +9,7 @@ var IngredientSchema = Schema(
 		seeAlso: [{ingredient: String, plainName: String}],
 		category: String,
 		taste: String,
+		function: String,
 		season: String,
 		weight: String,
 		volume: String,

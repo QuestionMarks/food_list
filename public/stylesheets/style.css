@@ -1,5 +1,30 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  /* Styles */
+}
+
 .sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
+    padding-top: 30px;
+    padding-left: 0px;
     list-style: none;
+    border-right: 2px solid black;
+    height: -webkit-fill-available;
+}
+
+.sidebarExperimenting {
+	background-color: #292E34;
+    height: -webkit-fill-available;
+}
+
+.sidebarImage {
+	display: block;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mainContent {
+	padding-top: 20px;
 }
