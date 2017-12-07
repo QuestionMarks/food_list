@@ -28,12 +28,10 @@ exports.ingredient_list = function(req, res, next) {
 // Display detail page for a specific ingredient
 exports.ingredient_detail = function(req, res, next) {
 
-  console.log('req.params:', req.params);
   Ingredient.findOne({ 'name': req.params.name })
     .exec(function (err, detail_ingredient) {
       if (err) { return next(err); }
       //Successful, so render
-      console.log('detail_ingredient', detail_ingredient);
       res.render('ingredient_detail', { ingredient: detail_ingredient });
     });
     

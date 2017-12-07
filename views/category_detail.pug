@@ -4,9 +4,10 @@ block content
   h1= title
   
   ul
-  each genre in genre_list
+  each item in category_detail.items
     li 
-      a(href=genre.url) #{genre.name}
+      - let ingredient_url = '/catalog/ingredient/' + item;
+      a(href=ingredient_url) #{item}
 
   else
     li There are no genres.

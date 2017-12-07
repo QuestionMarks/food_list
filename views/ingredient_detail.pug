@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  - console.log('ingredient: ', ingredient)
   h1 Ingredient Details - #{ingredient.name}
-  
+
   if ingredient.category
-    p #[strong Category:] #{ingredient.category}
+    - let category_url = '/catalog/category/' + ingredient.category;
+    a(href=category_url) Click here for #{ingredient.category} in general
+  
   if ingredient.taste
     p #[strong Taste:] #{ingredient.taste}
   if ingredient.season
