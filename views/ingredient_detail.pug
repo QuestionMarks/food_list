@@ -35,8 +35,8 @@ block content
               br
             else if val.strength == 2
               a(href=ingredient_url)
-                - let pairingString = val.pairing.toUpperCase() 
-                strong #{ingredientName}
+                - let pairingString = ingredientName.toUpperCase() 
+                strong #{pairingString}
               br
           else
             a(href=ingredient_url) #{ingredientName}
