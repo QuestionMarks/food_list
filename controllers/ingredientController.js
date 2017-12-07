@@ -28,30 +28,12 @@ exports.ingredient_list = function(req, res, next) {
 // Display detail page for a specific ingredient
 exports.ingredient_detail = function(req, res, next) {
 
-  // async.parallel({
-  //   ingredient: function(callback) {     
-        
-  //     Ingredient.findById(req.params.id)
-  //       .populate('author')
-  //       .populate('genre')
-  //       .exec(callback);
-  //   },
-  //   book_instance: function(callback) {
-
-  //     Ingredient.find({ 'ingredient': req.params.id })
-  //       //.populate('book')
-  //       .exec(callback);
-  //   },
-  // }, function(err, results) {
-  //   if (err) { return next(err); }
-  //   //Successful, so render
-  //   res.render('ingredient_detail', { title: 'Title', book: results.book, book_instances: results.book_instance });
-  // });
-
+  console.log('req.params:', req.params);
   Ingredient.findOne({ 'name': req.params.name })
     .exec(function (err, detail_ingredient) {
       if (err) { return next(err); }
       //Successful, so render
+      console.log('detail_ingredient', detail_ingredient);
       res.render('ingredient_detail', { ingredient: detail_ingredient });
     });
     

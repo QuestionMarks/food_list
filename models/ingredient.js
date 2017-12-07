@@ -5,14 +5,17 @@ var Schema = mongoose.Schema;
 var IngredientSchema = Schema(
 	{
 		name: {type: String, required: true},
-		category: {type: String, required: false},
-		taste: {type: String, required: false},
-		season: {type: String, required: false},
-		weight: {type: String, required: false},
-		volume: {type: String, required: false},
-		techniques: {type: String, required: false},
-		tips: {type: String, required: false},
-		pairings: [{ name: String, strength: Number }]
+		displayName: String,
+		seeAlso: [{ingredient: String, plainName: String}],
+		category: String,
+		taste: String,
+		season: String,
+		weight: String,
+		volume: String,
+		techniques: String,
+		tips: String,
+		pairings: [{ pairing: String, displayName: String, strength: Number, deadLink: Boolean }],
+		affinities: [String]
 	}
 );
 

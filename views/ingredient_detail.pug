@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  - console.log('ingredient: ', ingredient)
   h1 Ingredient Details - #{ingredient.name}
   
   if ingredient.category
@@ -20,8 +21,24 @@ block content
     
     if ingredient.pairings
       each val in ingredient.pairings
-        a(href=val.url) #{val.name}
-        br
+        if val.deadLink
+          span #{val.pairing}
+          br
+        else
+          - let ingredient_url = '/catalog/ingredient/' + val.pairing;
+          if val.strength
+            if val.strength = 2
+              a(href=ingredient_url)
+                - let pairingString = val.pairing.toUpperCase()
+                strong #{pairingString}
+              br
+            else if val.strength = 1
+              a(href=ingredient_url) 
+                strong #{val.pairing}
+              br
+          else
+            a(href=ingredient_url) #{val.pairing}
+            br
    
       else
         p There are pairings for that ingredient.

@@ -5,6 +5,7 @@ block content
   
   ul
   each ingredient in ingredient_list
+    -console.log('ingredient: ', ingredient)
     li 
       a(href=ingredient.url) #{ingredient.name} 
 
