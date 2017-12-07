@@ -27,18 +27,19 @@ block content
           br
         else
           - let ingredient_url = '/catalog/ingredient/' + val.pairing;
+          - let ingredientName = val.displayName ? val.displayName : val.pairing;
           if val.strength
             if val.strength == 1
               a(href=ingredient_url)
-                strong #{val.pairing}
+                strong #{ingredientName}
               br
             else if val.strength == 2
               a(href=ingredient_url)
                 - let pairingString = val.pairing.toUpperCase() 
-                strong #{pairingString}
+                strong #{ingredientName}
               br
           else
-            a(href=ingredient_url) #{val.pairing}
+            a(href=ingredient_url) #{ingredientName}
             br
    
       else
