@@ -27,3 +27,7 @@ and (max-device-width : 480px) {
 	padding-left: 30px;
 	text-align: center;
 }
+
+.ingredientList {
+	text-align: left;
+}
