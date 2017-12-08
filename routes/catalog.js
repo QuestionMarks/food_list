@@ -17,9 +17,16 @@ router.get('/ingredient/:name', ingredient_controller.ingredient_detail);
 /* GET request for list of all Ingredient items. */
 router.get('/ingredients', ingredient_controller.ingredient_list);
 
+/* GET request for list of  Ingredient items starting with a given letter. */
+router.get('/ingredients/:letter', ingredient_controller.ingredient_letter_list);
+
 /// CATEGORY ROUTES ///
 
 /* GET request for one Category. */
 router.get('/category/:name', category_controller.category_detail);
+
+/// SEARCH ROUTES ///
+
+router.get('/search', ingredient_controller.search);
 
 module.exports = router;

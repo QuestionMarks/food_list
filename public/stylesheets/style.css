@@ -18,6 +18,12 @@ and (max-device-width : 480px) {
     height: -webkit-fill-available;
 }
 
+.letterSearch {
+	margin: 5px;
+	font-size: 1.5em;
+	font: arial, sans-serif;
+}
+
 .sidebarImage {
 	display: block;
 	margin: 10px;
