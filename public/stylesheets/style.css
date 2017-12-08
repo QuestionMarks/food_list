@@ -5,17 +5,8 @@ and (max-device-width : 480px) {
   /* Styles */
 }
 
-.sidebar-nav {
-    padding-top: 30px;
-    padding-left: 0px;
-    list-style: none;
-    border-right: 2px solid black;
-    height: -webkit-fill-available;
-}
-
-.sidebarExperimenting {
-	background-color: #292E34;
-    height: -webkit-fill-available;
+.header-nav {
+    padding-top: 0px;
 }
 
 .letterSearch {
@@ -24,8 +15,8 @@ and (max-device-width : 480px) {
 	font: arial, sans-serif;
 }
 
-.sidebarImage {
-	display: block;
+.headerImage {
+	display:inline-block;
 	margin: 10px;
 	margin-left: auto;
 	margin-right: auto;
@@ -33,4 +24,6 @@ and (max-device-width : 480px) {
 
 .mainContent {
 	padding-top: 20px;
+	padding-left: 30px;
+	text-align: center;
 }
