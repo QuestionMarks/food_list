@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 Search Results
+  
+  ul
+  each ingredient in search_list
+    li 
+      - let ingredientName = ingredient.displayName ? ingredient.displayName : ingredient.name;
+      a(href=ingredient.url) #{ingredientName} 
+
+  else
+    li The search found 0 matches

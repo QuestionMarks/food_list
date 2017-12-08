@@ -29,6 +29,6 @@ router.get('/category/:name', category_controller.category_detail);
 
 router.get('/search', ingredient_controller.search);
 
-router.get('/search_results', ingredient_controller.search_results);
+router.get('/search_results/:search', ingredient_controller.search_results);
 
 module.exports = router;
