@@ -2,16 +2,16 @@ extends layout
 
 block content
   if category_detail
-  h1= title
-  
-  ul
-  each ingredient in category_detail.items
-    li 
-      - let ingredient_url = '/catalog/ingredient/' + ingredient.item;
-      - let ingredient_name = ingredient.displayName ? ingredient.displayName : ingredient.item;
-      a(href=ingredient_url) #{ingredient_name}
+    h1= title
+    
+    ul
+    each ingredient in category_detail.items
+      li 
+        - let ingredient_url = '/catalog/ingredient/' + ingredient.item;
+        - let ingredient_name = ingredient.displayName ? ingredient.displayName : ingredient.item;
+        a(href=ingredient_url) #{ingredient_name}
 
+    else
+      li There are no ingredients found in the selected category.
   else
-    li There are no ingredients found in the selected category.
-  else
-  	p The selected category was not found.
+    p The selected category was not found.
