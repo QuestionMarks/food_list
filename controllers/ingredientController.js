@@ -54,3 +54,15 @@ exports.ingredient_detail = function(req, res, next) {
 exports.search = function(req, res, next) {
   res.render('search');
 };
+
+// Displays search results
+exports.search_results = function(req, res, next) {
+  let searchTerm = req.body.ingredient_name ? req.body.ingredient_name : '';
+  Ingredient.find({ 'name': { "$regex": searchTerm, "$options": "i" }})
+    .sort([['name', 'ascending']])
+    .exec(function (err, list_search) {
+      if (err) { return next(err); }
+      //Successful, so render
+      res.render('search_results', { search_list: list_search });
+    });
+};
