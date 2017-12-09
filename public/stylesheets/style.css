@@ -31,3 +31,15 @@ and (max-device-width : 480px) {
 .ingredientList {
 	text-align: left;
 }
+
+.searchInput {
+	width: 30%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+.searchButton {
+	display: block;
+}

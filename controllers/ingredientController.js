@@ -57,7 +57,8 @@ exports.search = function(req, res, next) {
 
 // Displays search results
 exports.search_results = function(req, res, next) {
-  Ingredient.find({ 'name': { "$regex": req.params.search, "$options": "i" })
+  let searchTerm = req.body.ingredient_name ? req.body.ingredient_name : '';
+  Ingredient.find({ 'name': { "$regex": searchTerm, "$options": "i" }})
     .sort([['name', 'ascending']])
     .exec(function (err, list_search) {
       if (err) { return next(err); }
