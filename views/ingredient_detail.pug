@@ -1,74 +1,77 @@
 extends layout
 
 block content
-  - let ingredientTitle = ingredient.displayName ? ingredient.displayName : ingredient.name;
-  h1 Ingredient Details - #{ingredientTitle}
-  if ingredient.category
-    - let category_url = '/catalog/category/' + ingredient.category;
-    a(href=category_url) Click here to see all #{ingredient.category}
+  if ingredient
+    - let ingredientTitle = ingredient.displayName ? ingredient.displayName : ingredient.name;
+    h1 Ingredient Details - #{ingredientTitle}
+    if ingredient.category
+      - let category_url = '/catalog/category/' + ingredient.category;
+      a(href=category_url) Click here to see all #{ingredient.category}
 
-  if ingredient.seeAlso.length
-    span See also
-      each also in ingredient.seeAlso
-        - let seeAlsoLink = 'catalog/ingredient/' + also;
-        a(href=seeAlsoLink) #{also}
-        |,
+    if ingredient.seeAlso.length
+      span See also
+        each also in ingredient.seeAlso
+          - let seeAlsoLink = 'catalog/ingredient/' + also;
+          a(href=seeAlsoLink) #{also}
+          |,
 
-  if ingredient.taste
-    p #[strong Taste:] #{ingredient.taste}
-  if ingredient.season
-    p #[strong Season:] #{ingredient.season}
-  if ingredient.function
-    p #[strong Function:] #{ingredient.function}
-  if ingredient.weight
-    p #[strong Weight:] #{ingredient.weight}
-  if ingredient.volume
-    p #[strong Volume:] #{ingredient.volume}
-  if ingredient.techniques
-    p #[strong Techniques:] #{ingredient.techniques}
-  if ingredient.tips
-    p #[strong Tips:] #{ingredient.tips}
-  if ingredient.affinities.length
-    span #[strong Affinities:]
-    each affinity in ingredient.affinities
-      p #{affinity}
-  
-  div(style='margin-top:20px')
-    h4 Pairings
+    if ingredient.taste
+      p #[strong Taste:] #{ingredient.taste}
+    if ingredient.season
+      p #[strong Season:] #{ingredient.season}
+    if ingredient.function
+      p #[strong Function:] #{ingredient.function}
+    if ingredient.weight
+      p #[strong Weight:] #{ingredient.weight}
+    if ingredient.volume
+      p #[strong Volume:] #{ingredient.volume}
+    if ingredient.techniques
+      p #[strong Techniques:] #{ingredient.techniques}
+    if ingredient.tips
+      p #[strong Tips:] #{ingredient.tips}
+    if ingredient.affinities.length
+      span #[strong Affinities:]
+      each affinity in ingredient.affinities
+        p #{affinity}
     
-    if ingredient.pairings.length
-      each val in ingredient.pairings
-        if val.deadLink
-          span #{val.pairing}
-          br
-        else
-          - let ingredient_url = '/catalog/ingredient/' + val.pairing;
-          - let ingredientName = val.displayName ? val.displayName : val.pairing;
-          if val.strength
-            if val.strength == 1
-              a(href=ingredient_url)
-                strong #{ingredientName}
-              br
-            else if val.strength == 2
-              a(href=ingredient_url)
-                - let pairingString = ingredientName.toUpperCase() 
-                strong #{pairingString}
-              br
-            else if val.strength == 3
-              a(href=ingredient_url)
-                - let pairingString = '*' + ingredientName.toUpperCase() 
-                strong #{pairingString}
-              br
-          else
-            a(href=ingredient_url) #{ingredientName}
+    div(style='margin-top:20px')
+      h4 Pairings
+      
+      if ingredient.pairings.length
+        each val in ingredient.pairings
+          if val.deadLink
+            span #{val.pairing}
             br
-   
+          else
+            - let ingredient_url = '/catalog/ingredient/' + val.pairing;
+            - let ingredientName = val.displayName ? val.displayName : val.pairing;
+            if val.strength
+              if val.strength == 1
+                a(href=ingredient_url)
+                  strong #{ingredientName}
+                br
+              else if val.strength == 2
+                a(href=ingredient_url)
+                  - let pairingString = ingredientName.toUpperCase() 
+                  strong #{pairingString}
+                br
+              else if val.strength == 3
+                a(href=ingredient_url)
+                  - let pairingString = '*' + ingredientName.toUpperCase() 
+                  strong #{pairingString}
+                br
+            else
+              a(href=ingredient_url) #{ingredientName}
+              br
+     
+        else
+          p There are pairings for that ingredient.
       else
-        p There are pairings for that ingredient.
-    else
-      p There is no ingredient by that name
-  if ingredient.avoid.length
-    br
-    span #[strong AVOID:]
-    each bad_pairing in ingredient.avoid
-      p #{bad_pairing}
+        p There is no ingredient by that name
+    if ingredient.avoid.length
+      br
+      span #[strong AVOID:]
+      each bad_pairing in ingredient.avoid
+        p #{bad_pairing}
+  else
+    p The selected ingredient was not found.
