@@ -5,7 +5,7 @@ block content
   h1 Ingredient Details - #{ingredientTitle}
   if ingredient.category
     - let category_url = '/catalog/category/' + ingredient.category;
-    a(href=category_url) Click here for #{ingredient.category} in general
+    a(href=category_url) Click here to see all #{ingredient.category}
 
   if ingredient.seeAlso.length
     span See also
