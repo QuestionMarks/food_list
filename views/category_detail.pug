@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  if category_detail
   h1= title
   
   ul
@@ -11,4 +12,6 @@ block content
       a(href=ingredient_url) #{ingredient_name}
 
   else
-    li There are no genres.
+    li There are no ingredients found in the selected category.
+  else
+  	p The selected category was not found.

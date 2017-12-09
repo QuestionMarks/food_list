@@ -4,3 +4,8 @@ block content
   h1 Search Page
 
   p This page is currently under construction!
+
+  form(action='/ingredient_name_url/' method='post')
+    label(for="ingredient_name") Search for: 
+    input(id='ingredient_name' type='text' name='ingredient_field')
+    input(type='submit' value='OK')
