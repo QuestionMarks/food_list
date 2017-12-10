@@ -18,7 +18,8 @@ app.use(helmet());
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = process.env.MONGODB_URI || 'mongodb://seagull:Hexagon16@ds147304.mlab.com:47304/food_list';
+//var mongoDB = process.env.MONGODB_URI || 'mongodb://seagull:Hexagon16@ds147304.mlab.com:47304/food_list'; // Testing
+var mongoDB = process.env.MONGODB_URI || 'mongodb://seagull:Hexagon16@ds133816.mlab.com:33816/flavor_list';
 
 mongoose.connect(mongoDB, {
 	useMongoClient: true

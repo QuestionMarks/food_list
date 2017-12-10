@@ -15,7 +15,7 @@ var IngredientSchema = Schema(
 		volume: String,
 		techniques: String,
 		tips: String,
-		pairings: [{ pairing: String, displayName: String, strength: Number, deadLink: Boolean }],
+		pairings: [{ pairing: String, displayName: String, strength: Number, deadLink: Boolean, categoryLink: Boolean }],
 		affinities: [String],
 		avoid: [String]
 	}

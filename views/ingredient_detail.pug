@@ -43,7 +43,11 @@ block content
             span #{val.pairing}
             br
           else
-            - let ingredient_url = '/catalog/ingredient/' + val.pairing;
+            - let ingredient_url = '';
+            if val.categoryLink
+              - ingredient_url = '/catalog/category/' + val.pairing;
+            else
+              - ingredient_url = '/catalog/ingredient/' + val.pairing;
             - let ingredientName = val.displayName ? val.displayName : val.pairing;
             if val.strength
               if val.strength == 1
