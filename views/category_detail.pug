@@ -7,7 +7,7 @@ block content
     ul
     each ingredient in category_detail.items
       li 
-        - let ingredient_url = '/catalog/ingredient/' + ingredient.item;
+        - let ingredient_url = '/catalog/ingredient/' + ingredient.item.split(' ').join('');
         - let ingredient_name = ingredient.displayName ? ingredient.displayName : ingredient.item;
         a(href=ingredient_url) #{ingredient_name}
 

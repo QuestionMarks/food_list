@@ -45,9 +45,9 @@ block content
           else
             - let ingredient_url = '';
             if val.categoryLink
-              - ingredient_url = '/catalog/category/' + val.pairing;
+              - ingredient_url = '/catalog/category/' + val.pairing.split(' ').join('');
             else
-              - ingredient_url = '/catalog/ingredient/' + val.pairing;
+              - ingredient_url = '/catalog/ingredient/' + val.pairing.split(' ').join('');
             - let ingredientName = val.displayName ? val.displayName : val.pairing;
             if val.strength
               if val.strength == 1
