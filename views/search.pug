@@ -2,9 +2,11 @@ extends layout
 
 block content
   h1 Search Page
-
-  form(action='/catalog/search_results/' method='post')
-    div.form-group
-      label(for="ingredient_name") Search for: 
-      input#name.form-control(class='searchInput' type='text' placeholder='Enter a full or partial ingredient name' name='ingredient_name')
-      button.btn.btn-primary(type='submit') Submit
+  div(class='row')
+    div(class='col-xs-3 col-md-4')
+    form(action='/catalog/search_results/' method='post')
+      div.form-group(class='col-xs-6 col-md-4')
+        label(for="ingredient_name") Search for: 
+        input#name.form-control(class='searchInput' type='text' placeholder='Enter a full or partial ingredient name' name='ingredient_name')
+        button.btn.btn-primary(type='submit') Submit
+    div(class='col-xs-3 col-md-4')
