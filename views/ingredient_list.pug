@@ -8,7 +8,7 @@ block content
     div(class='col-xs-8 col-md-4')
       ul(class='ingredientList')
         each ingredient in ingredient_list
-          li 
+          li(class='ingredientListItems')
             - let ingredientName = ingredient.displayName ? ingredient.displayName : ingredient.name;
             a(href=ingredient.url) #{ingredientName} 
 

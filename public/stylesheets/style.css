@@ -31,6 +31,12 @@ and (max-device-width : 480px) {
 	text-align: left;
 }
 
+.ingredientListItems {
+	list-style-position:inside;
+	border-bottom: 1px solid gray;
+	padding: 10px;
+}
+
 .searchInput {
 	width: 100%;
 	display: block;
