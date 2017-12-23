@@ -11,8 +11,9 @@ block content
     if ingredient.seeAlso.length
       span See also
         each also in ingredient.seeAlso
-          - let seeAlsoLink = 'catalog/ingredient/' + also;
-          a(href=seeAlsoLink) #{also}
+          - let seeAlsoLink = 'catalog/ingredient/' + also.ingredient.split(' ').join('');
+          - let seeAlsoName = also.plainName ? also.plainName : also.ingredient;
+          a(href=seeAlsoLink)  #{seeAlsoName}
           |,
 
     if ingredient.taste
