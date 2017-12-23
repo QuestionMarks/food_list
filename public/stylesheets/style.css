@@ -30,7 +30,7 @@ body {
 
 .ingredientListItems {
 	list-style-position:inside;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #CCCCCC;
 	padding: 10px;
 }
 
