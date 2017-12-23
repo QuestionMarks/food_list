@@ -1,12 +1,5 @@
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-  /* Styles */
-}
-
 .header-nav {
-    padding-top: 0px;
+	padding-top: 0px;
 }
 
 .letterSearch {
@@ -47,4 +40,14 @@ and (max-device-width : 480px) {
 
 .searchButton {
 	display: block;
+}
+
+.btn-circle {
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	padding: 6px 0;
+	font-size: 12px;
+	line-height: 1.42;
+	border-radius: 15px;
 }

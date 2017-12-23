@@ -3,7 +3,7 @@ extends layout
 block content
   if ingredient
     - let ingredientTitle = ingredient.displayName ? ingredient.displayName : ingredient.name;
-    h1 Ingredient Details - #{ingredientTitle}
+    h1 Ingredient Details: #{ingredientTitle}
     if ingredient.category
       - let category_url = '/catalog/category/' + ingredient.category;
       a(href=category_url) Click here to see all #{ingredient.category}
